@@ -1,0 +1,75 @@
+/* : root {} */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    line-height: 2;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+.mt {
+    margin-top: 60px;
+}
+
+.mb {
+    margin-bottom: 60px;
+}
+
+.mb-s {
+    margin-bottom: 20px;
+}
+
+.mt-s {
+    margin-top: 20px;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+
+/* Brand colors */
+
+
+/* .facebook {
+    background: #4267b2;
+}
+
+
+
+.twitter {
+    background: #38a1f3;
+}
+
+*/
+
+
+/* .facebook:hover {
+    background: #4267b2;
+}
+
+.linkedin:hover {
+    background: #0077b5;
+} */
