@@ -73,3 +73,97 @@ h4 {
 .linkedin:hover {
     background: #0077b5;
 } */
+
+
+/* Customs Style for header
+============================= */
+
+.header {
+    min-height: 700px;
+    position: relative;
+}
+
+.header__my-intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blue-text {
+    transition: all 0.2s ease-out !important;
+}
+
+nav ul a:hover {
+    background-color: transparent;
+    border-bottom: #1e88e5 solid 2px;
+}
+
+.nav-wrapper {
+    box-shadow: none;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+@media screen and (max-width: 670px) {
+    header {
+        min-height: 400px;
+    }
+    .header__my-intro h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Customs Style for About me section
+============================= */
+
+.about-me {
+    min-height: 95vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
+}
+
+.projects,
+.about-me__h2 {
+    margin-bottom: 2.4rem;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.about-me__img {
+    border-radius: 5px;
+}
+
+.view-resume {
+    border: white solid 2px;
+    background-color: transparent;
+    margin-top: 40px;
+    transition: all 0.2s ease-out;
+    box-shadow: none;
+}
+
+.view-resume:hover {
+    background-color: #1e88e5;
+}
+
+@media screen and (max-width: 770px) {
+    .about-me {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .about-me__img--container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
