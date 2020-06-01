@@ -167,3 +167,10 @@ nav ul a:hover {
     justify-content: center;
     align-items: center;
 }
+
+
+/* Dashboard layout */
+
+.layout .menu {
+    height: 100vh !important;
+}

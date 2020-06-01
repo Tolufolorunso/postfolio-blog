@@ -77,6 +77,14 @@ exports.login = async (req, res, next) => {
   });
 };
 
+exports.getAdminDashboard = async (req, res, next) => {
+  res.status(201).render("blog/admin-oreofe", {
+    title: "Oreofe's Dashboard",
+    time: req.time,
+    user: user,
+  });
+};
+
 exports.authorize = async (req, res, next) => {
   let token;
   if (

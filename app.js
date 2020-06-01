@@ -1,4 +1,5 @@
 const cors = require("cors");
+const compression = require("compression");
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
@@ -22,6 +23,7 @@ app.set("view engine", "ejs");
 
 // Customs Middleware
 app.use(appTime);
+app.use(compression());
 
 app.use("/admin", adminRoutes);
 app.use("/blog", blogApiRoutes);
