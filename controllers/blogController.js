@@ -28,7 +28,6 @@ exports.postToDb = async (req, res, next) => {
     }
     const post = await Post.create(req.body);
     post.__v = undefined;
-    console.log(post);
 
     res.status(201).json({
       status: "success",

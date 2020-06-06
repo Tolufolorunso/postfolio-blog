@@ -31,6 +31,9 @@ app.use("/blog", blogApiRoutes);
 app.get("/", (req, res) => {
   res.status(200).render("index", { title: "Tolu's blog", time: req.time });
 });
+app.get("*", (req, res) => {
+  res.status(200).render("404", { title: "Tolu's blog", time: req.time });
+});
 
 // const DB =
 //   "mongodb+srv://josh:jesus000@cluster0-hziu4.mongodb.net/farmvest?retryWrites=true&w=majority";
