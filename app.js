@@ -40,14 +40,14 @@ app.get("*", (req, res) => {
 
 // const DB_LOCAL = "mongodb://localhost:27017/farmvest";
 
-mongoose
-  .connect(process.env.DATABASE_LOCAL, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
-  .then((c) => console.log("DATABASE connection successfull"));
+// mongoose
+//   .connect(process.env.DATABASE_LOCAL, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//   })
+//   .then((c) => console.log("DATABASE connection successfull"));
 
 app.use(globalError);
 
