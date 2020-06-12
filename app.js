@@ -38,13 +38,8 @@ app.get("*", (req, res) => {
   res.status(200).render("404", { title: "404 Page", time: req.time });
 });
 
-// const DB =
-//   "mongodb+srv://josh:jesus000@cluster0-hziu4.mongodb.net/farmvest?retryWrites=true&w=majority";
-
-const DB_LOCAL = "mongodb://localhost:27017/my-blog";
-
 mongoose
-  .connect(DB_LOCAL, {
+  .connect(process.env.DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -54,7 +49,7 @@ mongoose
 
 app.use(globalError);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
 });

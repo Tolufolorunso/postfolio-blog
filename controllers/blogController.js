@@ -3,7 +3,6 @@ const Post = require("../models/blogModel");
 exports.getAllPosts = async (req, res, next) => {
   try {
     const posts = await Post.find().select("-__v");
-    console.log(posts);
     res
       .status(200)
       .render("blog/posts", { posts, title: "blog posts", time: req.time });
@@ -19,7 +18,6 @@ exports.getAllPosts = async (req, res, next) => {
 exports.getAPost = async (req, res, next) => {
   try {
     const post = await Post.findOne({ slug: req.params.slug }).select("-__v");
-    console.log(post);
 
     if (!post) {
       return next(new Error("Post is not found"));
@@ -36,7 +34,6 @@ exports.showForm = async (req, res, next) => {
 };
 
 exports.postToDb = async (req, res, next) => {
-  console.log(req.body);
   try {
     const postExists = await Post.findOne({ title: req.body.title });
     if (postExists) {
