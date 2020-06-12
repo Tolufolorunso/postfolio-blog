@@ -45,7 +45,8 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
-  .then((c) => console.log("DATABASE connection successfull"));
+  .then((c) => console.log("DATABASE connection successfull"))
+  .catch(() => console.log("not connected"));
 
 app.use(globalError);
 

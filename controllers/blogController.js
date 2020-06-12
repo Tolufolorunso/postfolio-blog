@@ -43,6 +43,6 @@ exports.postToDb = async (req, res, next) => {
     post.__v = undefined;
     res.status(201).redirect("/blog");
   } catch (error) {
-    res.status(400).render("/blog/posts");
+    res.status(400).render("404");
   }
 };
