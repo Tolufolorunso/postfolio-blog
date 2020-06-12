@@ -1,0 +1,28 @@
+<%- include('../partials/blogHeader') %>
+    <style>
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            background: black;
+            color: white;
+            /* white-space: pre-wrap; */
+            width: 100%;
+            max-height: 400px;
+            padding: 10px;
+            overflow: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class="container mt mb">
+        <a href="/blog" class="btn blue"><i class="Medium material-icons">chevron_left</i></a>
+        <div class="row">
+            <div class="col s12 l10 offset-l1">
+                <h2 class="mb-s">
+                    <%= post.title %>:
+                </h2>
+                <div>
+                    <%- post.sanitizeHTML %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>

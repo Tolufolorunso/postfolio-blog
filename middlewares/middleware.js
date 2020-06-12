@@ -9,9 +9,12 @@ exports.appTime = (req, res, next) => {
 
 exports.globalError = (error, req, res, next) => {
   if (error) {
-    res.status(422).json({
-      status: "fail",
-      error: error.message,
-    });
+    res
+      .status(422)
+      .render("error", {
+        title: "Error page",
+        time: req.time,
+        error: error.message,
+      });
   }
 };

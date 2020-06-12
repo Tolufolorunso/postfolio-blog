@@ -1,0 +1,33 @@
+<%- include('../partials/blogHeader') %>
+    <style>
+        .post-content {
+            font-size: 12px;
+        }
+        
+        .post-heading {
+            font-size: 0.9rem !important;
+        }
+    </style>
+    <main class="container mt">
+        <div class="row">
+            <%  posts.forEach(function (post) { %>
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= post.image %> " alt="<%= post.title %>" style="height: 150px;">
+                            <h2 class="card-title post-heading">
+                                <%= post.title %>
+                            </h2>
+                        </div>
+                        <div class="card-content post-content">
+                            <%- post.sanitizeHTML.substring(0,80) %>...
+                        </div>
+                        <div class="card-action">
+                            <a href="blog/<%= post.slug %> " class="btn blue">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <%  }) %>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
