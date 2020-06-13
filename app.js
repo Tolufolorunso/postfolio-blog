@@ -39,14 +39,14 @@ app.get("*", (req, res) => {
 });
 
 mongoose
-  .connect(process.env.DB, {
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
   .then((c) => console.log("DATABASE connection successfull"))
-  .catch(() => console.log("not connected"));
+  .catch(() => console.log("not connected to db"));
 
 app.use(globalError);
 
