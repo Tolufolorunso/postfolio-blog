@@ -21,7 +21,9 @@
                         </div>
                         <div class="card-content post-content">
                             <%- post.sanitizeHTML.substring(0,80) %>...
+                                <br/><span class="badge"><small><%= post.day %> day(s) ago</small></span>
                         </div>
+
                         <div class="card-action">
                             <a href="blog/<%= post.slug %> " class="btn blue">read more</a>
                         </div>

@@ -39,7 +39,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(process.env.DATABASE_LOCAL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

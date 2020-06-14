@@ -1,8 +1,17 @@
 const Post = require("../models/blogModel");
 
 exports.getAllPosts = async (req, res, next) => {
+  let diff;
   try {
     const posts = await Post.find().select("-__v");
+    posts.forEach((post) => {
+      diff = new Date() - new Date(post.createdAt);
+      const min = Math.round(diff / 1000 / 60);
+      const hours = Math.round(min / 60);
+      const day = Math.round(hours / 24);
+      post.day = day;
+    });
+
     res
       .status(200)
       .render("blog/posts", { posts, title: "blog posts", time: req.time });
@@ -18,7 +27,11 @@ exports.getAllPosts = async (req, res, next) => {
 exports.getAPost = async (req, res, next) => {
   try {
     const post = await Post.findOne({ slug: req.params.slug }).select("-__v");
-
+    diff = new Date() - new Date(post.createdAt);
+    const min = Math.round(diff / 1000 / 60);
+    const hours = Math.round(min / 60);
+    const day = Math.round(hours / 24);
+    post.day = day;
     if (!post) {
       return next(new Error("Post is not found"));
     }
