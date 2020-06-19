@@ -12,7 +12,6 @@ exports.signup = async (req, res, next) => {
     //     user: newUser,
     //   },
     // });
-    console.log("exists", userExist);
   }
   const newUser = await Admin.create(req.body);
   const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
@@ -54,12 +53,15 @@ exports.login = async (req, res, next) => {
     req.session.user = user;
     res.redirect("/dashboard");
   } catch (error) {
-    console.log(error);
+    res.render("error", {
+      title: "Error page",
+      error: error.message,
+      time: req.time,
+    });
   }
 };
 exports.logout = async (req, res, next) => {
   req.session.destroy((error) => {
-    console.log(error);
     res.redirect("login");
   });
 };

@@ -7,7 +7,6 @@ exports.getAllPosts = async (req, res, next) => {
       createdAt: -1,
     });
 
-    console.log(posts);
     posts.forEach((post) => {
       diff = new Date() - new Date(post.createdAt);
       const min = Math.round(diff / 1000 / 60);

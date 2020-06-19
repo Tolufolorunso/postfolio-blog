@@ -28,7 +28,6 @@ exports.postToDb = async (req, res, next) => {
     }
 
     const post = await Post.create(req.body);
-    console.log(post);
     post.__v = undefined;
     res.status(201).redirect("/dashboard/posts");
   } catch (error) {
